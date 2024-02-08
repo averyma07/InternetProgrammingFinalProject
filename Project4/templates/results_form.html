@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>myMovies Xpress! - Search Results</title>
+		<link rel="stylesheet" type="text/css" href="../css/mySite.css" />
+		<script src="./script.js"></script>
+	</head>
+	<body id="results">
+		<header>
+			<h3 class="welcome">Welcome, <?= $_SESSION["displayName"] ?> (<a href="javascript: confirmLogout()">logout</a>)</h3>
+			<h1 class="logo">myMovies Xpress!</h1>
+		</header>
+<!-- DO NOT REMOVE OR MODIFY THE CODE OR PLACE YOUR CODE ABOVE THIS LINE -->
+		<?php
+			echo "<p>".count($resultsArray)." movies found for the keyword: ".$searchString."</p>";
+			if(count($resultsArray) > 0){
+				echo "<table>";
+				foreach($resultsArray as $movie){
+					echo "<tr>";
+					echo "<td class='poster'><img src=\"".$movie["Poster"]."\" alt=\"Poster\" height=\"100\"></td>";
+					echo "<td class='title'><a href=\"https://www.imdb.com/title/".$movie["imdbID"]."\" target='_blank'>".$movie["Title"]." (".$movie["Year"].")</a></td>";
+					echo "<td class='add'><a href=\"javascript: addMovie('".$movie["imdbID"]."')\">+</a></td>";
+					echo "</tr>";
+				}
+				echo "</table>";
+			}
+		?>
+		<p>
+			<input type="button" value="Cancel" onclick="javascript: confirmCancel()"/>
+		</p>
+
+<!-- DO NOT REMOVE OR MODIFY THE CODE OR PLACE YOUR CODE BELOW THIS LINE -->
+	</body>
+</html>

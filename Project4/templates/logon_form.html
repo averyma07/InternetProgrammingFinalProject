@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>myMovies Xpress! - Login</title>
+		<link rel="stylesheet" type="text/css" href="../css/mySite.css">
+		<script src="./script.js"></script>
+	</head>
+	<body id="logon">
+		<h1 class="logo">myMovies Xpress!</h1>
+		<p style="color: red;"><?= $message ?></p>
+<!-- DO NOT REMOVE OR MODIFY THE CODE OR PLACE YOUR CODE ABOVE THIS LINE -->
+	<p>Please input your username and password into the fields below and press the "Login" button.</p>
+	<p>If you do not have an account, click the "Create Account" link.</p>
+	<p>If you have forgotten your password, click the "Forgot Password" link.</p>
+		<form action="./logon.php" method="post">
+			<p>
+				<label for="username">Username:</label>
+				<input type="text" name="username" id="username" required>
+			</p>
+			<p>
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" required>
+			</p>
+			<p class="buttons">
+				<button type="reset">Clear</button>
+				<button type="submit">Login</button>
+			</p>
+			<p>
+				<input type="hidden" name="action" value="login" />
+			</p>
+			<p>
+				<a href="./logon.php?form=create">Create Account</a>
+				<a href="./logon.php?form=forgot">Forgot Password</a>
+			</p>
+		</form>
+		<p>
+			<a href="../index.html">ePortfolio</a>
+		</p>
+<!-- DO NOT REMOVE OR MODIFY THE CODE OR PLACE YOUR CODE BELOW THIS LINE -->
+	</body>
+</html>
